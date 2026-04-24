@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Reliability Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="header">
+        <div>
+          <h1>Test Reliability Dashboard</h1>
+          <p id="generatedAt" class="muted"></p>
+        </div>
+        <div id="reliabilityBadge" class="badge"></div>
+      </header>
+
+      <section class="cards" id="summaryCards"></section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Reliability Score Trend</h2>
+          <canvas id="reliabilityTrend"></canvas>
+        </article>
+
+        <article class="panel">
+          <h2>Auto-Healed Fixes</h2>
+          <ul id="autoHealedList" class="list"></ul>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Flaky Tests</h2>
+        <ul id="flakyList" class="list"></ul>
+      </section>
+    </main>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
