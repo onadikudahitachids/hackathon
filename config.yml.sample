@@ -1,0 +1,33 @@
+
+---
+env: Team14
+pyron:
+  clientId:
+  clientSecret:
+  tokenUrl: https://access.auth.dev.sample.org/cip-edu/oauth2/token
+  #coloGatewayUrl: https://dev-colo-gateway.sample.org
+  coloGatewayUrl: https://pconf.team14.map2.samplecolo.pvt
+  educatorColoGatewayUrl: https://educator.team14.map2.samplecolo.pvt
+
+scriptConfig:
+  EDITED_BY_LABEL: onboarding-script
+  CALLS_IN_BETWEEN_TIMEOUT: 8000
+  SECONDARY_DELAY: 10000
+
+
+awsS3Detentials:
+  AWS_S3_BUCKET_NAME: sample-onboard
+  AWS_S3_FILE_NAME: first.txt
+  SQS_ACCESS_KEY:
+  SQS_SECRET_KEY:
+  SQS_REGION: us-west-2
+
+productApi:
+  url: https://profile-api-dev.sample.org
+  username:
+  password:
+
+registerApi:
+  url: https://enrollments-api-dev.sample.org
+  username: 
+  password:
