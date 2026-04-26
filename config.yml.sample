@@ -1,7 +1,7 @@
 
 ---
 env: Team14
-pyron:
+py:
   clientId:
   clientSecret:
   tokenUrl: https://access.auth.dev.sample.org/cip-edu/oauth2/token

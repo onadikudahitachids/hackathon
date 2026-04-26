@@ -1,20 +1,20 @@
 const axios = require("../../utils/axios");
 let pyToken = null;
 const createToken = async (config) => {
-    console.debug('Starting of getPyronToken method');
-    const response = await axios.post(`${config.pyron.tokenUrl}`, {
-        'client_id': config.pyron.clientId,
-        'client_secret': config.pyron.clientSecret,
+    console.debug('Starting of getPyToken method');
+    const response = await axios.post(`${config.py.tokenUrl}`, {
+        'client_id': config.py.clientId,
+        'client_secret': config.py.clientSecret,
         'grant_type': 'client_credentials'
     }, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
     const token = response?.data?.access_token || '';
     if (token === '') {
-        console.debug('getPyronToken - Unable to get the token');
+        console.debug('getPyToken - Unable to get the token');
     }
     return `${token}`;
 };
 
-async function getPyronToken(config) {
+async function getPyToken(config) {
     if (pyToken == null) {
         pyToken = await createToken(config);
     }
@@ -22,5 +22,5 @@ async function getPyronToken(config) {
 }
 
 module.exports = {
-    getPyronToken,
+    getPyToken,
 };

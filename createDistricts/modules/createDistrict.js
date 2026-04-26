@@ -23,7 +23,7 @@ exports.execute = async (input, token) => {
 
 async function createDistrict(districtCreationPayload, token) {
     let responseData = {};
-    await partnerService.postToPartnerService(config.pyron.coloGatewayUrl + '/partnerConfig/partners', districtCreationPayload, token)
+    await partnerService.postToPartnerService(config.py.coloGatewayUrl + '/partnerConfig/partners', districtCreationPayload, token)
         .then((response) => {
             if (response.status === 201 && (response.data && response.data.businessIdentifier !== null)) {
                 responseData = {
