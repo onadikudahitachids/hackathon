@@ -6,11 +6,11 @@ const config = yaml.load(fs.readFileSync(process.argv[2], 'utf8'));
 const createDistrict = require('./modules/createDistrict');
 const utils = require('../utils/UtilFunctions');
 const excelPath = process.argv[3];
-const {getPyronToken} = require("../services/services/pyronService");
+const {getPyToken} = require("../services/services/pyService");
 
 async function processDistrict(districtInfo) {
     try {
-        const token = await getPyronToken(config);
+        const token = await getPyToken(config);
         let responseData = await createDistrict.execute(districtInfo, token)
         if (responseData.status === 'SUCCESS') {
             await utils.sleep(5000);
